@@ -41,3 +41,17 @@ export const searchImage = (searchInput) => async (dispatch) => {
     console.error(e);
   }
 };
+
+export const downloadImage = (id) => async (dispatch) => {
+  dispatch({ type: "LOADING" });
+  try {
+    const { status, data } = await axios.get(
+      `https://api.unsplash.com/photos/${id}/download?client_id=CyU8YsvA7ySMnH4oaTVYLnNDlIfXer9lFpf-TEhuVEQ`
+    );
+    if (status === 200) {
+      dispatch({ type: "DOWNLOAD_IMAGE", payload: data.url });
+    }
+  } catch (e) {
+    console.error(e);
+  }
+};

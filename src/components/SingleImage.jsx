@@ -7,7 +7,7 @@ export const SingleImage = ({ image }) => {
   const dispatch = useDispatch();
   return (
     <>
-      <div className="flex justify-center mb-[20px]">
+      <div className="flex justify-center mb-[50px]">
         <div className="w-[400px] mt-[20px] flex flex-col items-center xs:w-[300px]">
           <img
             className="w-[400px] h-[400px] rounded-md xs:w-[300px] xs:h-[300px]"

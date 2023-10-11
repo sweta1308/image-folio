@@ -18,7 +18,7 @@ export const Images = () => {
             <MoonLoader color="#377dff" />
           </div>
         ) : (
-          <div className="grid grid-cols-4 xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+          <div className="grid grid-cols-4 xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mb-[50px]">
             {state.images.map((image) => (
               <div key={image.id}>
                 <ImageCard image={image} />

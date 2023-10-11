@@ -12,13 +12,13 @@ export const Images = () => {
   const state = useSelector((state) => state);
   return (
     <>
-      <div>
+      <div className="flex justify-center">
         {state.images.length === 0 ? (
           <div className="flex justify-center items-center mt-[60px]">
             <MoonLoader color="#377dff" />
           </div>
         ) : (
-          <div className="flex flex-wrap px-[30px] justify-between">
+          <div className="grid grid-cols-5">
             {state.images.map((image) => (
               <div key={image.id}>
                 <ImageCard image={image} />

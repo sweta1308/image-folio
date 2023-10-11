@@ -1,4 +1,5 @@
 import axios from "axios";
+import { handleDownload } from "../utils/handleDownload";
 
 export const fetchImages = () => async (dispatch) => {
   dispatch({ type: "LOADING" });
@@ -49,7 +50,7 @@ export const downloadImage = (id) => async (dispatch) => {
       `https://api.unsplash.com/photos/${id}/download?client_id=CyU8YsvA7ySMnH4oaTVYLnNDlIfXer9lFpf-TEhuVEQ`
     );
     if (status === 200) {
-      dispatch({ type: "DOWNLOAD_IMAGE", payload: data.url });
+      handleDownload(data.url);
     }
   } catch (e) {
     console.error(e);

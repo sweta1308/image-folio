@@ -1,6 +1,4 @@
 export const handleDownload = (imageUrl) => {
-  // Create a fetch request to fetch the image data
-
   fetch(imageUrl)
     .then((response) => response.blob())
     .then((blob) => {

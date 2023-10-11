@@ -1,5 +1,7 @@
 import { useSelector } from "react-redux";
 import { MoonLoader } from "react-spinners";
+import { handleShare } from "../utils/handleShare";
+import { Download, Share } from "@mui/icons-material";
 
 export const Image = () => {
   const state = useSelector((state) => state);
@@ -12,9 +14,9 @@ export const Image = () => {
         </div>
       ) : (
         <div className="flex justify-center">
-          <div className="w-[500px] mt-[20px]">
+          <div className="w-[500px] mt-[20px] sm:w-[400px] flex flex-col items-center xs:w-[300px]">
             <img
-              className="w-[400px] h-[400px] rounded-md"
+              className="w-[400px] h-[400px] rounded-md sm:w-[350px] sm:h-[350px] xs:w-[300px] xs:h-[300px]"
               src={image.urls.regular}
               alt={image.alt_description}
             />
@@ -40,6 +42,17 @@ export const Image = () => {
                 </div>
               )}
             </p>
+            <div className="w-full mt-[20px] text-sm flex justify-evenly">
+              <button className=" bg-primary-color text-white p-[10px] rounded-md hover:bg-primary-dark">
+                <Download sx={{ fontSize: 20 }} /> Download Image
+              </button>
+              <button
+                onClick={() => handleShare(image.id)}
+                className="border border-primary-color text-primary-color p-[8px] rounded-md hover:bg-primary-color hover:text-white"
+              >
+                <Share sx={{ fontSize: 20 }} /> Share Image
+              </button>
+            </div>
           </div>
         </div>
       )}

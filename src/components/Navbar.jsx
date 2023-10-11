@@ -11,21 +11,21 @@ export const Navbar = () => {
   return (
     <>
       <div className="sticky top-0 z-30 bg-white">
-        <div className="w-full px-[60px] py-[20px] shadow-md flex items-center">
+        <div className="w-full px-[60px] py-[20px] shadow-md flex items-center md:flex-col md:items-start sm:px-[20px]">
           <h1
             onClick={() => navigate("/")}
             className="text-primary-color font-extrabold text-[36px] cursor-pointer"
           >
             ImageFolio
           </h1>
-          <div className="flex ml-[400px]">
+          <div className="flex ml-[400px] xl:ml-[200px] md:ml-0 md:mt-[15px]">
             <div className="border-b-2 border-black p-[5px]">
               <Search sx={{ fontSize: 15 }} />
               <input
                 onClick={() => navigate("/")}
                 value={searchInput}
                 onChange={(e) => setSearchInput(e.target.value)}
-                className="outline-none text-sm mx-[8px] w-[250px]"
+                className="outline-none text-sm mx-[8px] w-[250px] xl:w-[180px] md:w-[250px] sm:w-[150px]"
                 placeholder="Search..."
               />
             </div>

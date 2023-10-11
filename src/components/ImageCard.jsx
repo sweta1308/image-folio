@@ -1,9 +1,9 @@
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { fetchSingleImage } from "../actions/imageAction";
 import { MoreVert } from "@mui/icons-material";
+import { fetchSingleImage } from "../actions/imageAction";
 import { CardModal } from "./CardModal";
-import { useState } from "react";
 
 export const ImageCard = ({ image }) => {
   const { id, urls, alt_description, description, likes } = image;

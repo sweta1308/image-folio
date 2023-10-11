@@ -18,7 +18,7 @@ export const Images = () => {
             <MoonLoader color="#377dff" />
           </div>
         ) : (
-          <div className="flex flex-wrap justify-around">
+          <div className="flex flex-wrap px-[30px] justify-between">
             {state.images.map((image) => (
               <div key={image.id}>
                 <ImageCard image={image} />

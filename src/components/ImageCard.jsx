@@ -17,7 +17,7 @@ export const ImageCard = ({ image }) => {
           dispatch(fetchSingleImage(id));
           navigate(`/image/${id}`);
         }}
-        className="w-[250px] p-[10px] m-[10px] relative cursor-pointer hover:shadow-lg hover:scale-105"
+        className="w-[250px] p-[10px] m-[10px] relative cursor-pointer shadow-xl"
       >
         <div className="relative">
           <img
@@ -29,7 +29,6 @@ export const ImageCard = ({ image }) => {
             onClick={(e) => {
               e.stopPropagation();
               setShowModal(!showModal);
-              console.log(showModal);
             }}
             className="absolute top-2 right-2 cursor-pointer"
           >
@@ -40,11 +39,11 @@ export const ImageCard = ({ image }) => {
         <div className="px-[7px]">
           <p className="my-[5px] font-bold">
             {description
-              ? description.length > 25
-                ? description.substring(0, 25) + "..."
+              ? description.length > 22
+                ? description.substring(0, 22) + "..."
                 : description
-              : alt_description.length > 25
-              ? alt_description.substring(0, 25) + "..."
+              : alt_description.length > 22
+              ? alt_description.substring(0, 22) + "..."
               : alt_description}
           </p>
           <p className="mt-[-6px]">

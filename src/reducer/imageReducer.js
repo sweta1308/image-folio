@@ -2,6 +2,7 @@ const initialState = {
   loading: false,
   images: [],
   image: null,
+  imageUrl: "",
 };
 
 export const imageReducer = (state = initialState, { type, payload }) => {
@@ -14,6 +15,8 @@ export const imageReducer = (state = initialState, { type, payload }) => {
       return { ...state, loading: false, image: payload };
     case "SEARCH_IMAGE":
       return { ...state, loading: false, images: payload };
+    case "DOWNLOAD_IMAGE":
+      return { ...state, loading: false, imageUrl: payload };
     default:
       return state;
   }

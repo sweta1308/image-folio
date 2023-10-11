@@ -17,7 +17,7 @@ export const ImageCard = ({ image }) => {
           dispatch(fetchSingleImage(id));
           navigate(`/image/${id}`);
         }}
-        className="w-[250px] p-[10px] m-[10px] relative cursor-pointer shadow-xl"
+        className="w-[250px] p-[10px] m-[10px] relative cursor-pointer shadow-xl rounded-md"
       >
         <div className="relative">
           <img

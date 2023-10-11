@@ -18,12 +18,12 @@ export const Navbar = () => {
           >
             ImageFolio
           </h1>
-          <div className="rounded-md flex ml-[400px] border border-black xl:ml-[200px] md:ml-0 md:mt-[15px]">
+          <div className="md:w-full rounded-md flex ml-[400px] border border-black xl:ml-[200px] md:ml-0 md:mt-[15px]">
             <input
               onClick={() => navigate("/")}
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
-              className="outline-none text-sm mx-[8px] p-[5px] w-[400px] lg:w-[300px] xs:w-[250px]"
+              className="w-[400px] lg:w-[300px] outline-none text-sm mx-[8px] p-[5px] md:w-full"
               placeholder="Search..."
             />
             <button
@@ -32,7 +32,7 @@ export const Navbar = () => {
                 dispatch(searchImage(searchInput));
                 setSearchInput("");
               }}
-              className="bg-primary-color text-white px-[10px] py-[5px] hover:bg-primary-dark"
+              className="bg-primary-color text-white px-[15px] py-[5px] hover:bg-primary-dark"
             >
               <Search sx={{ fontSize: 25 }} />
             </button>

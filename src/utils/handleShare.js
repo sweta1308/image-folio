@@ -1,9 +1,9 @@
 export const handleShare = async (id) => {
   try {
     await navigator.share({
-      title: "Trend wave",
-      text: "Check out this post",
-      url: `https://trend-wave.vercel.app/post/${id}`,
+      title: "Image Folio",
+      text: "Check out this image",
+      url: `https://imagefolio.vercel.app/image/${id}`,
     });
   } catch (error) {
     console.error("Error sharing:", error);

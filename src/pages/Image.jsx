@@ -1,9 +1,11 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { MoonLoader } from "react-spinners";
 import { handleShare } from "../utils/handleShare";
 import { Download, Share } from "@mui/icons-material";
+import { downloadImage } from "../actions/imageAction";
 
 export const Image = () => {
+  const dispatch = useDispatch();
   const state = useSelector((state) => state);
   const { loading, image } = state;
   return (
@@ -13,7 +15,7 @@ export const Image = () => {
           <MoonLoader color="#377dff" />
         </div>
       ) : (
-        <div className="flex justify-center">
+        <div className="flex justify-center mb-[20px]">
           <div className="w-[500px] mt-[20px] sm:w-[400px] flex flex-col items-center xs:w-[300px]">
             <img
               className="w-[400px] h-[400px] rounded-md sm:w-[350px] sm:h-[350px] xs:w-[300px] xs:h-[300px]"
@@ -43,7 +45,12 @@ export const Image = () => {
               )}
             </p>
             <div className="w-full mt-[20px] text-sm flex justify-evenly">
-              <button className=" bg-primary-color text-white p-[10px] rounded-md hover:bg-primary-dark">
+              <button
+                onClick={() => {
+                  dispatch(downloadImage(image.id));
+                }}
+                className=" bg-primary-color text-white p-[10px] rounded-md hover:bg-primary-dark"
+              >
                 <Download sx={{ fontSize: 20 }} /> Download Image
               </button>
               <button
